@@ -1,11 +1,11 @@
 <mat-card>
   <form (submit)="onAddStudent(studentForm)" #studentForm="ngForm">
     <mat-form-field>
-      <input matInput type="text" name="name" ngModel required minlength="3" #name="ngModel">
+      <input matInput type="text" name="name" ngModel required minlength="3" placeholder="Student Name" #name="ngModel">
       <mat-error *ngIf="name.invalid">Please enter a student name</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <textarea matInput rows="4" name="course" ngModel required #course="ngModel"></textarea>
+      <textarea matInput rows="4" name="course" ngModel required placeholder="Student Course" #course="ngModel"></textarea>
       <mat-error *ngIf="course.invalid">Please enter a student course</mat-error>
     </mat-form-field>
     <button mat-raised-button  color="accent" type="submit">Add Student</button>

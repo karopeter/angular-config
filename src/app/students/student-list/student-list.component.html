@@ -2,6 +2,10 @@
    <mat-expansion-panel *ngFor="let student of students">
       <mat-expansion-panel-header>{{ student.name }}</mat-expansion-panel-header>
      <p>{{ student.course }}</p>
+     <mat-action-row>
+        <button mat-button color="accent">EDIT</button>
+        <button mat-button color="warn">DELETE</button>
+     </mat-action-row>
    </mat-expansion-panel>
 </mat-accordion>
 <p class="info-text mat-body-1" *ngIf="students.length <= 0">No posts added yet!</p>
