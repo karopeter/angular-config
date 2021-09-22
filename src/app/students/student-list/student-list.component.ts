@@ -21,10 +21,14 @@ export class StudentListComponent implements OnInit, OnDestroy {
   constructor(public studentsService: StudentsService) {}
 
   ngOnInit(): void {
-    this.students = this.studentsService.getStudents();
+    this.studentsService.getStudents();
     this.studentsSub = this.studentsService.getStudentUpdateListener().subscribe((students: Student[]) => {
        this.students = students;
     });
+  }
+
+  onDelete(studentId: string): void {
+     this.studentsService.deleteStudent(studentId);
   }
 
   ngOnDestroy(): void {

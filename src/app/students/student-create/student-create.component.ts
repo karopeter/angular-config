@@ -20,6 +20,6 @@ export class StudentCreateComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    this.studentsService.addStudent(form.value.name, form.value.course);
+    this.studentsService.addStudent(form.value.id, form.value.name, form.value.course);
   }
 }
