@@ -15,14 +15,17 @@ export class StudentListComponent implements OnInit, OnDestroy {
   //    { name: 'Third post', course: 'This is the third posts content'}
   //  ];
   students: Student[] = [];
+  isLoading = false;
   private studentsSub!: Subscription;
 
 
   constructor(public studentsService: StudentsService) {}
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.studentsService.getStudents();
     this.studentsSub = this.studentsService.getStudentUpdateListener().subscribe((students: Student[]) => {
+       this.isLoading = false;
        this.students = students;
     });
   }
